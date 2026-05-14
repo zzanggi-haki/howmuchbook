@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { SunsetStripe } from "@/components/SunsetStripe";
@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   description: "한 권의 책을 알라딘 중고/매장/eBook에서 한눈에 비교",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -15,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className="h-full antialiased">
-      <body className="min-h-full flex flex-col bg-surface text-ink">
+      <body className="min-h-full flex flex-col bg-surface text-ink overflow-x-hidden">
         <div className="flex-1 flex flex-col">{children}</div>
         <SunsetStripe />
         <Footer />
