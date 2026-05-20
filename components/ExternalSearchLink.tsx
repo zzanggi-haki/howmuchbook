@@ -2,10 +2,12 @@ export function ExternalSearchLink({
   siteName,
   href,
   badge,
+  sublabel,
 }: {
   siteName: string;
   href: string;
   badge?: string;
+  sublabel: string;
 }) {
   return (
     <a
@@ -26,7 +28,7 @@ export function ExternalSearchLink({
           )}
         </div>
         <div className="text-[12px] text-steel truncate mt-1">
-          리디북스에서 이 책 검색해보기
+          {sublabel}
         </div>
       </div>
       <div className="shrink-0 flex items-center gap-1.5 text-[13px] font-medium text-primary">

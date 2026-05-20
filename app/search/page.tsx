@@ -6,6 +6,7 @@ import { OfferRow } from "@/components/OfferRow";
 import { SearchHeader } from "@/components/SearchHeader";
 import { StoreTabsList } from "@/components/StoreTabsList";
 import { SummaryCards } from "@/components/SummaryCards";
+import { buildNaverEbookSearchUrl } from "@/lib/providers/naver";
 import { buildRidiSearchUrl } from "@/lib/providers/ridi";
 import { search } from "@/lib/search";
 
@@ -181,6 +182,13 @@ async function Results({ query }: { query: string }) {
             siteName="리디북스"
             href={buildRidiSearchUrl(primary.book.title)}
             badge="외부 검색"
+            sublabel="리디북스에서 이 책 검색해보기"
+          />
+          <ExternalSearchLink
+            siteName="네이버 도서"
+            href={buildNaverEbookSearchUrl(primary.book.title)}
+            badge="외부 검색"
+            sublabel="5개 판매처 e북 가격을 한눈에"
           />
         </div>
       </section>
